@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Metbus</title>
+    <!-- Para que google entienda mejor de que trata tu sitio -->
+
+    <!-- Para que en redes sociales aparezca un extracto de qué es Metbus -->
+  
+    <link rel="stylesheet" href="../css/noticia_individual.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  </head>
+
+
+  <body class="noticias">
+  <!-- Header -->
+    <header id="siteHeader">
+      <div class="container nav">
+        <div class="brand">
+          <a href="../index.html">
+            <img src="../assets/logo/metbuslogo.svg" alt="METBUS Logo" class="logo-img">
+          </a>
+        </div>
+        <nav class="menu" aria-label="Principal">
+          <a href="../index.html">Home</a>
+          <a href="../recorridos.html">Recorridos</a>
+          <a href="../quienes-somos.html">Quienes Somos</a>
+          <a href="../sostenibilidad.html">Sostenibilidad</a>
+          <a href="../noticias.html">Noticias</a>
+          <a href="../mesa-de-ayuda.html">Mesa de Ayuda</a>
+        </nav>
+      </div>
+  <!-- Botón hamburguesa solo para móviles -->
+      <button class="hamburger-btn" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+  <!-- Menú lateral para móviles -->
+  <nav class="mobile-menu" aria-hidden="true">
+    <div class="menu-content">
+      <button class="close-btn" aria-label="Cerrar menú">&times;</button>
+      <ul>
+        <li><a href="../index.html">HOME</a></li>
+        <li><a href="../recorridos.html">RECORRIDOS</a></li>
+        <li><a href="../quienes-somos.html">QUIENES SOMOS</a></li>
+        <li><a href="../sostenibilidad.html">SOSTENIBILIDAD</a></li>
+        <li><a href="../noticias.html">NOTICIAS</a></li>
+        <li><a href="../mesa-de-ayuda.html">MESA DE AYUDA</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- CABECERA NOTICIA -->
+  <div class="cabecera-color">
+    <div class="cabecera-titulo">
+      <img class="flecha-icono" src="../assets/icons/flecha-metbus-white.png" alt="Flecha">
+      <h1>Noticias</h1>
+    </div>
+  </div>
+ 
+  <!-- CUERPO DE NOTICIA -->
+  <main class="noticia">
+    <div class="container">
+      <p class="etiqueta">EVENTO</p>
+      <h1 class="titulo">Metbus completa 950 buses eléctricos y potencia la electromovilidad urbana
+      </h1>
+        <div class="meta">
+          <span class="fecha">Diciembre 2025 </span>
+          <span class="ubicacion">Cerrillos, Santiago, Chile</span>
+        </div>
+    </div>
+    <div class="imagen">
+        <img src="../assets/images/noticias/2025/evento-950.jpg" alt="AACC meeting venue">
+    </div>
+ <!-- PARRAFO DE NOTICIA -->   
+    <div class="container">
+      <div class="contenido">
+        <h3>Un nuevo hito para la electromovilidad en Santiago</h3>
+        <p><strong>Metbus celebró un logro histórico:</strong> la puesta en marcha de <strong>950 buses 100 % eléctricos</strong>, incluyendo unidades estándar, articuladas y de dos pisos.</p>
+        <p>Con esta renovación, <strong>casi el 94 % de nuestra flota opera con tecnología cero emisiones,</strong> consolidándonos como líderes en transporte limpio y sustentable.</p>
+        <p>El evento contó con la presencia de autoridades del <strong>Ministerio de Transportes</strong>, directivos de <strong>BYD Chile</strong> y representantes del transporte público metropolitano.</p>
+        <p>Este avance no solo mejora la calidad de viaje para millones de santiaguinos, sino que también <strong>reduce las emisiones de CO₂</strong> y posiciona a Santiago como <strong>referente global en electromovilidad fuera de China.</strong></p>
+      </div>
+    </div>
+  </main>
+
+
+  <!-- CARRUSEL NOTICIAS -->
+  <section id="noticias" class="section container">
+    <div class="center" style="margin-bottom:var(--space)">
+    <span class="pill">Noticias Relacionadas</span>
+      <h2>Últimas <span class="accent">Novedades</span></h2>
+    </div>
+
+    <div class="news-carousel">
+      <button class="carousel-btn prev">‹</button>
+      <div class="news-track-wrapper">
+          <div class="news-track" id="newsTrack"></div>
+      </div>
+      <button class="carousel-btn next">›</button>
+    </div>
+  </section>
+
+
+  <!-- NUESTRA HISTORIA + CONVOY -->
+  <div id="historia-placeholder"></div>
+
+  <script>
+  fetch("../components/historia.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("historia-placeholder").innerHTML = html;
+    });
+  </script>
+
+  <!-- FOOTER -->
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch("../components/footer.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("footer-placeholder").innerHTML = html;
+    });
+  </script>
+
+<!-- JS -->
+  <script src="/js/core/header.js"></script>
+  <script src="/js/core/menu.js"></script>
+  <script src="/js/pages/news.js"></script>
+
+  </body>
+</html>

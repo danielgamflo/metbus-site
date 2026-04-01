@@ -1,0 +1,62 @@
+[
+  {
+    "orden": 1,
+    "recorrido": "308",
+    "url": "https://www.red.cl/mapas-y-horarios/bus/recorrido/?codser=308",
+    "destino": "INTERMODAL AEROPUERTO - (M) PAJARITOS"
+  },
+  {
+    "orden": 2,
+    "recorrido": "309",
+    "url": "https://www.red.cl/mapas-y-horarios/bus/recorrido/?codser=309",
+    "destino": "TU DESTINO AQUÍ"
+  },
+  {
+    "orden": 3,
+    "recorrido": "310",
+    "url": "https://www.red.cl/mapas-y-horarios/bus/recorrido/?codser=310",
+    "destino": "PLAZA ITALIA - LAS CONDES"
+  },
+  {
+    "orden": 4,
+    "recorrido": "311",
+    "url": "https://www.red.cl/mapas-y-horarios/bus/recorrido/?codser=311",
+    "destino": "MAIPÚ - ESTACIÓN CENTRAL"
+  },
+  {
+    "orden": 5,
+    "recorrido": "312",
+    "url": "https://www.red.cl/mapas-y-horarios/bus/recorrido/?codser=312",
+    "destino": "PUDAHUEL - (M) SAN PABLO"
+  },
+  {
+    "orden": 6,
+    "recorrido": "313",
+    "url": "https://www.red.cl/mapas-y-horarios/bus/recorrido/?codser=313",
+    "destino": "CERRILLOS - (M) EL LLANO"
+  },
+  {
+    "orden": 7,
+    "recorrido": "314",
+    "url": "https://www.red.cl/mapas-y-horarios/bus/recorrido/?codser=314",
+    "destino": "QUILICURA - (M) NEPTUNO"
+  },
+  {
+    "orden": 8,
+    "recorrido": "315",
+    "url": "https://www.red.cl/mapas-y-horarios/bus/recorrido/?codser=315",
+    "destino": "LO BARNECHEA - PROVIDENCIA"
+  },
+  {
+    "orden": 9,
+    "recorrido": "316",
+    "url": "https://www.red.cl/mapas-y-horarios/bus/recorrido/?codser=316",
+    "destino": "PEÑALOLÉN - PLAZA ÑUÑOA"
+  },
+  {
+    "orden": 10,
+    "recorrido": "317",
+    "url": "https://www.red.cl/mapas-y-horarios/bus/recorrido/?codser=317",
+    "destino": "LA FLORIDA - (M) BELLAVISTA"
+  }
+]

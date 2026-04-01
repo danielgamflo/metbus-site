@@ -1,0 +1,300 @@
+/* ========================================
+   RECORRIDOS - CSS LIMPIO
+   ======================================== */
+
+/* ===== Variables ===== */
+:root {
+  --brand: #1189a6;
+  --brand-red: #e60024;
+  --brand-2: #ff8a00;
+  --ink: #1f2a33;
+  --bg: #f5f7f9;
+  --shadow: 0 10px 25px rgba(16,24,40,.08);
+  --space-lg: clamp(28px,4vw,56px);
+}
+
+/* ===== Base ===== */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Outfit", sans-serif;
+  color: var(--ink);
+}
+
+img { display:block; max-width:100%; }
+
+/* ===== Header ===== */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:50;
+  height:90px;
+  display:flex;
+  align-items:center;
+  transition:.3s;
+  background:transparent;
+}
+
+header.scrolled{
+  background:var(--brand-red);
+  height:64px;
+  box-shadow:var(--shadow);
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  width:100%;
+  max-width:1400px;
+  margin:0 auto;
+}
+
+.logo-img{ height:24px; }
+
+.menu{
+  display:flex;
+  gap:32px;
+}
+
+.menu a{
+  color:#fff;
+  font-weight:400;
+}
+
+/* ===== Cabecera Roja ===== */
+/* ===== Cabecera ===== */
+.cabecera-color {
+  width: 100%;
+  height: 280px;
+  background: var(--brand-red);
+  display: flex;
+  align-items: flex-end;
+  padding: 90px 5vw 0;
+}
+
+.cabecera-titulo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: -0.8rem;
+}
+
+.cabecera-color h1 {
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+.flecha-icono {
+  width: clamp(28px, 3.5vw, 48px);
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .cabecera-color {
+    height: 210px;
+    padding: 90px 5vw 1.8rem;
+  }
+  .cabecera-titulo {
+    margin-bottom: 0;
+  }
+  .cabecera-color h1 {
+    font-size: clamp(2.6rem, 6vw, 5rem);
+  }
+}
+
+
+/* ===== Buscador ===== */
+.recorridos-buscador {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 0 24px;
+  background: #fff;
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(16,24,40,.08);
+  height: 56px;
+}
+
+.recorridos-buscador svg {
+  flex-shrink: 0;
+  color: #1189a6;
+  opacity: 0.7;
+}
+
+.recorridos-buscador input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #1f2a33;
+  background: transparent;
+}
+
+.recorridos-buscador input::placeholder {
+  color: #aab4bc;
+}
+
+.recorridos-count {
+  font-size: 0.78rem;
+  color: #aab4bc;
+  white-space: nowrap;
+}
+
+.recorridos-sin-resultados {
+  text-align: center;
+  color: #aab4bc;
+  padding: 3rem 0;
+  grid-column: 1 / -1;
+  font-size: 1rem;
+}
+
+/* ===== Recorridos Grid ===== */
+.recorridos-section{
+  padding: 4rem 1rem;
+  background:var(--bg);
+}
+
+.recorridos-container{
+  max-width:1600px;
+  margin:40px auto;
+  padding:0 24px;
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(280px,1fr));
+  gap:20px;
+}
+
+/* Tarjeta */
+.recorrido-card{
+  background:#fff;
+  border-radius:20px;
+  padding:12px;
+  box-shadow:var(--shadow);
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  transition:.3s;
+}
+
+.recorrido-top,
+.recorrido-bottom{
+  display:flex;
+  gap:10px;
+  height:80px;
+}
+
+.recorrido-numero,
+.recorrido-destino{
+  flex:2;
+  border-radius:15px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  padding: 0 10px;
+}
+
+.recorrido-numero{
+  background:var(--brand);
+}
+
+.recorrido-destino{
+  background:#0a1a3a;
+}
+
+.recorrido-numero .numero{
+  font-size:clamp(24px,3vw,50px);
+  font-weight:800;
+}
+
+.recorrido-icon,
+.recorrido-arrow{
+  flex:1;
+  background:#0a1a3a;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.recorrido-icon img,
+.recorrido-arrow img{
+  width:30px;
+  filter:brightness(0) invert(1);
+}
+
+.recorrido-destino span{
+  font-size:14px;
+  font-weight:600;
+  text-align:center;
+}
+
+/* Hover */
+.recorrido-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 30px rgba(16,24,40,.12);
+}
+
+.recorrido-card:hover .recorrido-numero,
+.recorrido-card:hover .recorrido-destino{
+  background:var(--brand-red);
+}
+
+/* ===== Responsive ===== */
+@media (max-width:768px){
+  .menu{
+    display:none;
+  }
+}
+
+@media (max-width:600px){
+  .recorridos-buscador {
+    margin: 0 12px;
+  }
+
+  .recorridos-container{
+    grid-template-columns: 1fr;
+    padding: 0 16px;
+    gap: 14px;
+  }
+
+  .recorrido-top,
+  .recorrido-bottom {
+    height: 90px;
+  }
+
+  .recorrido-numero .numero {
+    font-size: 2.2rem;
+  }
+
+  .recorrido-destino span {
+    font-size: 15px;
+  }
+
+  .recorrido-icon img,
+  .recorrido-arrow img {
+    width: 26px;
+  }
+}
+
+@media (min-width:601px) and (max-width:768px){
+  .recorridos-container{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .recorrido-top,
+  .recorrido-bottom {
+    height: 90px;
+  }
+}

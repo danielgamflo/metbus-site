@@ -1,0 +1,182 @@
+/* ========================================
+   QUIÉNES SOMOS – METBUS (LIMPIO)
+======================================== */
+
+/* ===== Variables necesarias ===== */
+:root {
+  --brand: #1189a6;
+  --brand-dark: #0e6e86;
+  --brand-2: #ff8a00;
+  --ink: #1f2a33;
+  --muted: #6b7a86;
+  --container: min(90vw, 1200px);
+}
+
+/* ========================================
+   CABECERA SUPERIOR AZUL
+======================================== */
+
+.cabecera-color {
+  width: 100%;
+  height: 280px;
+  background: var(--brand);
+  display: flex;
+  align-items: flex-end;
+  padding: 90px 5vw 0;
+}
+
+.cabecera-titulo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: -0.8rem;
+}
+
+.cabecera-color h1 {
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+.flecha-icono {
+  width: clamp(28px, 3.5vw, 48px);
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .cabecera-color {
+    height: 210px;
+    padding: 90px 5vw 1.8rem;
+  }
+  .cabecera-titulo {
+    margin-bottom: 0;
+  }
+  .cabecera-color h1 {
+    font-size: clamp(2.6rem, 6vw, 5rem);
+  }
+}
+
+/* ========================================
+   CONTENIDO PRINCIPAL
+======================================== */
+
+.noticia {
+  padding: 3rem 1rem 4rem;
+  background: #fff;
+  color: var(--ink);
+}
+
+.noticia .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.noticia .titulo {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: var(--brand-dark);
+}
+
+.noticia p {
+  line-height: 1.7;
+  font-size: 1.05rem;
+  margin-bottom: 1.3rem;
+}
+
+.noticia h3 {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  color: var(--brand);
+}
+
+/* Imagen superior */
+
+.noticia .imagen {
+  margin: 3rem auto;
+  max-width: 1000px;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+.noticia .imagen img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ========================================
+   MAPA VIDEO LOOP
+======================================== */
+
+.mapa-terminales {
+  margin: 5rem 0;
+  text-align: center;
+}
+
+.mapa-video-wrapper {
+  width: 70%;
+  max-width: 1400px;
+  margin: 2rem auto 0;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.mapa-video-wrapper video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ========================================
+   HISTORIA (SOLO BUSES)
+======================================== */
+
+.historia-section {
+  position: relative;
+  padding: 4rem 0;
+  overflow: hidden;
+}
+
+.historia-title {
+  font-weight: 800;
+  margin-bottom: 3rem;
+}
+
+.news-bus {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -13px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 768px) {
+
+  .noticia .imagen {
+    border-radius: 16px;
+  }
+  .noticia .imagen img {
+    border-radius: 10px;
+  }
+
+  .mapa-video-wrapper {
+    width: 90%;
+  }
+
+  .noticia {
+    padding-top: 4rem;
+  }
+
+}

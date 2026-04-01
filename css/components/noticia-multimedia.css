@@ -1,0 +1,94 @@
+
+/* === Carrusel Multimedia (para noticia-multimedia) === */
+.noticia-multimedia .galeria-carrusel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 1100px;
+  margin: 3rem auto 2rem;
+}
+
+.noticia-multimedia .galeria-track-wrapper {
+  overflow: hidden;
+  flex: 1;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.noticia-multimedia .galeria-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+.noticia-multimedia .galeria-slide {
+  flex: 0 0 100%;
+  max-height: 800px;
+}
+
+.noticia-multimedia .galeria-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* === Botones de navegación === */
+.noticia-multimedia .galeria-btn {
+  flex-shrink: 0;
+  background: var(--brand-2);
+  border: none;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  transition: opacity 0.2s;
+  line-height: 1;
+}
+.noticia-multimedia .galeria-btn:hover {
+  opacity: 0.85;
+}
+
+.galeria-hint { display: none; }
+
+/* === Móvil === */
+@media (max-width: 768px) {
+  .noticia-multimedia .galeria-track {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+  }
+
+  .noticia-multimedia .galeria-slide {
+    scroll-snap-align: center;
+    flex: 0 0 100%;
+  }
+
+  .noticia-multimedia .galeria-carrusel {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .noticia-multimedia .galeria-btn {
+    display: none;
+  }
+
+  .galeria-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: rgba(0,0,0,0.45);
+    opacity: 1;
+    transition: opacity 0.4s ease;
+  }
+
+  .galeria-hint.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+}

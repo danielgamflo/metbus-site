@@ -1,0 +1,12 @@
+node_modules/
+_staging/
+.DS_Store
+
+# Claude Code - configuración local personal (no subir al repo)
+.claude/settings.local.json
+
+# Archivos multimedia (se manejan directamente en el servidor)
+assets/videos/
+assets/images/
+assets/gif/
+assets/kpi/*.mp4

@@ -1,0 +1,10 @@
+services:
+  metbus:
+    image: 67566756/metbus-site:v4
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: metbus
+    restart: unless-stopped
+    ports:
+      - "4000:4000"

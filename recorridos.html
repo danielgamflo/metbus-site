@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/png" href="assets/icons/icon-metbus.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recorridos — Metbus</title>
+  <link rel="canonical" href="https://www.metbus.cl/recorridos.html">
+  <meta name="description" content="Consulta los recorridos y rutas de Metbus en Santiago. Encuentra tu línea de bus eléctrico y planifica tu viaje en transporte público.">
+  <meta name="keywords" content="recorridos Metbus, rutas buses Santiago, líneas transporte público, mapa recorridos Metbus">
+  <meta name="author" content="Metbus">
+  <meta property="og:title" content="Recorridos — Metbus">
+  <meta property="og:description" content="Consulta los recorridos y rutas de Metbus en Santiago. Encuentra tu línea de bus eléctrico.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.metbus.cl/recorridos.html">
+  <meta property="og:image" content="https://www.metbus.cl/assets/images/mapa-recorridos.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Recorridos — Metbus">
+  <meta name="twitter:image" content="https://www.metbus.cl/assets/images/mapa-recorridos.webp">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/recorridos.css">
+  
+
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body class="recorridos">
+
+
+  <!-- Menú -->
+  <header id="siteHeader">
+    <div class="container nav">
+      <div class="brand">
+        <a href="index.html">
+          <img src="assets/logo/metbuslogo.svg" alt="METBUS Logo" class="logo-img">
+        </a>
+      </div>
+      <nav class="menu" aria-label="Principal">
+        <a href="index.html">Home</a>
+        <a href="recorridos.html">Recorridos</a>
+        <a href="quienes-somos.html">Quienes Somos</a>
+        <a href="noticias.html">Noticias</a>
+        <a href="sostenibilidad.html">Sostenibilidad</a>
+        <a href="mesa-de-ayuda.html">Mesa de Ayuda</a>
+      </nav>
+    </div>
+
+    <!-- Botón hamburguesa solo para móviles -->
+    <button class="hamburger-btn" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+  <!-- Menú lateral para móviles -->
+<nav class="mobile-menu" aria-hidden="true">
+  <div class="menu-content">
+    <button class="close-btn" aria-label="Cerrar menú">&times;</button>
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="recorridos.html">RECORRIDOS</a></li>
+      <li><a href="quienes-somos.html">QUIENES SOMOS</a></li>
+      <li><a href="noticias.html">NOTICIAS</a></li>
+      <li><a href="sostenibilidad.html">SOSTENIBILIDAD</a></li>
+      <li><a href="mesa-de-ayuda.html">MESA DE AYUDA</a></li>
+    </ul>
+  </div>
+</nav>
+
+ <!-- CABECERA -->
+ <div class="cabecera-color">
+  <div class="cabecera-titulo">
+    <img class="flecha-icono" src="assets/icons/flecha-metbus.png" alt="Flecha">
+    <h1>Recorridos</h1>
+  </div>
+</div>
+ 
+ <!-- CUERPO DE RECORRIDOS -->
+  <section class="recorridos-section">
+    <div class="recorridos-buscador">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input type="search" id="buscadorRecorrido" placeholder="Busca por número o destino…" autocomplete="off">
+      <span class="recorridos-count" id="recorridosCount"></span>
+    </div>
+    <div class="recorridos-container">
+      <!-- Los recorridos se cargarán dinámicamente aquí -->
+    </div>
+  </section>
+
+
+<!-- NUESTRA HISTORIA + CONVOY -->
+<div id="historia-placeholder"></div>
+
+<script>
+  fetch("components/historia.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("historia-placeholder").innerHTML = html;
+    });
+</script>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+<script>
+  fetch("components/footer.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
+    });
+</script>
+
+<script src="js/core/header.js"></script>
+<script src="js/core/menu.js"></script>
+<script src="js/pages/recorridos.js"></script>
+
+</body>
+</html>
