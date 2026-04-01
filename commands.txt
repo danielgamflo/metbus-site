@@ -1,0 +1,9 @@
+EN todos los comandos. sacar <> y solo dejar las comillas 
+
+
+git checkout <nombre de la ramara> = cambiar de rama
+git checkout -b "<nombre de la rama que se quiere crear>" = crea un rama nueva  
+
+git add . = guardar cambios en la rama local
+git commit -m "<mensjae>" = ace se agrega el mensaje de los cambios por ejmplo "modique logo"
+git push origin <nombre de la rama> = enviar los cambios a git
