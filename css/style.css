@@ -845,25 +845,38 @@ header.scrolled .brand img{ height:25px }
   z-index:2; pointer-events:none;
 }
 
-/* Track que se mueve, con el convoy escalado como bloque */
-.bus-train{
+/*
+  .bus-scaler: wrapper estático que aplica el scale.
+  Nunca se anima — solo posiciona y escala el bloque.
+  Separar scale del translate elimina el problema de var() en @keyframes
+  que en Safari iOS puede no actualizarse correctamente al cambiar breakpoints.
+*/
+.bus-scaler{
   position:absolute;
   left:0;
-  bottom:calc(6.5% - -4px); /* ruedas “tocan” la calle */
+  bottom:calc(6.5% - -4px);
+  transform-origin:left bottom;
+  transform: scale(var(--hist-scale));
+}
+
+/*
+  .bus-train: solo anima translateX — sin scale, sin var().
+  El @keyframes usa valores fijos (px y vw) para máxima compatibilidad.
+  -100% - 30px garantiza que el convoy esté 18-24px fuera de pantalla
+  antes de entrar (no en el borde exacto), evitando el corte en el reset.
+*/
+.bus-train{
   display:flex;
   align-items:flex-end;
   gap:var(--hist-gap);
-  transform-origin:left bottom;
   will-change: transform;
+  transform: translateX(calc(-100% - 30px));
   animation: train-move var(--hist-speed) linear infinite;
 }
-/* Escalamos el grupo completo para mantener distancias y posiciones */
-.bus-train{ transform: scale(var(--hist-scale)); }
 
-/* -100% = ancho propio del elemento → siempre fuera de pantalla izquierda sin importar el scale */
 @keyframes train-move{
-  from{ transform: translateX(-100%) scale(var(--hist-scale)); }
-  to  { transform: translateX(110vw) scale(var(--hist-scale)); }
+  from{ transform: translateX(calc(-100% - 30px)); }
+  to  { transform: translateX(170vw); }
 }
 
 /* Cada bus: alto declarativo y sin encogerse */
@@ -889,14 +902,17 @@ header.scrolled .brand img{ height:25px }
 
 /* ===== Control por breakpoint ===== */
 @media (max-width: 1024px){
-  :root{ --hist-speed: 30s; --hist-scale: .9; }
+  :root{ --hist-speed: 28s; --hist-scale: .9; }
+  .bus-scaler{ transform: scale(.9); }
 }
 @media (max-width: 768px){
-  :root{ --hist-speed: 18s; --hist-scale: .7; --hist-gap: 28px; }
+  :root{ --hist-speed: 14s; --hist-scale: .7; --hist-gap: 28px; }
+  .bus-scaler{ transform: scale(.7); }
   .historia-section{ min-height: 200px; padding-top: 60px; }
 }
 @media (max-width: 480px){
-  :root{ --hist-speed: 16s; --hist-scale: .6; --hist-gap: 24px; }
+  :root{ --hist-speed: 11s; --hist-scale: .6; --hist-gap: 24px; }
+  .bus-scaler{ transform: scale(.6); }
 }
 
 /* ====== NUESTRA HISTORIA LOOP ===== */
@@ -1116,12 +1132,6 @@ footer {
   .recarga-deco { width: 90px; height: 90px; }
 }
 
-@media (max-width: 560px){
-  @keyframes train-move{
-    from { transform: translateX(-300%) scale(var(--hist-scale)); }
-    to   { transform: translateX(calc(100vw + 15%)) scale(var(--hist-scale)); }
-  }
-}
 
 /* ====== Accesibilidad ====== */
 @media (prefers-reduced-motion: reduce){
